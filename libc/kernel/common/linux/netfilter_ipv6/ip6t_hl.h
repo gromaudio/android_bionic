@@ -19,14 +19,14 @@
 #ifndef _IP6T_HL_H
 #define _IP6T_HL_H
 enum {
- IP6T_HL_EQ = 0,
+ IP6T_HL_SET = 0,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- IP6T_HL_NE,
- IP6T_HL_LT,
- IP6T_HL_GT,
+ IP6T_HL_INC,
+ IP6T_HL_DEC
 };
+#define IP6T_HL_MAXMODE IP6T_HL_DEC
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct ip6t_hl_info {
+struct ip6t_HL_info {
  u_int8_t mode;
  u_int8_t hop_limit;
 };

@@ -222,6 +222,9 @@ int           __timer_getoverrun:timer_getoverrun(timer_t)                      
 int           __timer_delete:timer_delete(timer_t)                                                      1
 int           utimes(const char*, const struct timeval tvp[2])                          1
 int           utimensat(int, const char *, const struct timespec times[2], int)         1
+int           timerfd_create(clockid_t, int)   1
+int           timerfd_settime(int, int, const struct itimerspec *, struct itimerspec *)   1
+int           timerfd_gettime(int, struct itimerspec *)   1
 
 # signals
 int     sigaction(int, const struct sigaction *, struct sigaction *)  1
@@ -241,6 +244,7 @@ int           bind(int, struct sockaddr *, int)  1,-1,1
 int           connect(int, struct sockaddr *, socklen_t)   1,-1,1
 int           listen(int, int)                   1,-1,1
 int           accept(int, struct sockaddr *, socklen_t *)  1,-1,1
+int           accept4(int, struct sockaddr*, socklen_t*, int)  1,-1,1
 int           getsockname(int, struct sockaddr *, socklen_t *)  1,-1,1
 int           getpeername(int, struct sockaddr *, socklen_t *)  1,-1,1
 int           sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t)  1,-1,1
@@ -257,6 +261,7 @@ int           bind:socketcall:2 (int, struct sockaddr *, int)  -1,1,-1
 int           connect:socketcall:3(int, struct sockaddr *, socklen_t)   -1,1,-1
 int           listen:socketcall:4(int, int)                   -1,1,-1
 int           accept:socketcall:5(int, struct sockaddr *, socklen_t *)  -1,1,-1
+int           accept4:socketcall:18(int, struct sockaddr*, socklen_t*, int)  -1,1,-1
 int           getsockname:socketcall:6(int, struct sockaddr *, socklen_t *)  -1,1,-1
 int           getpeername:socketcall:7(int, struct sockaddr *, socklen_t *)  -1,1,-1
 int           socketpair:socketcall:8(int, int, int, int*)    -1,1,-1
@@ -267,6 +272,7 @@ int           setsockopt:socketcall:14(int, int, int, const void *, socklen_t)  
 int           getsockopt:socketcall:15(int, int, int, void *, socklen_t *)    -1,1,-1
 int           sendmsg:socketcall:16(int, const struct msghdr *, unsigned int)  -1,1,-1
 int           recvmsg:socketcall:17(int, struct msghdr *, unsigned int)   -1,1,-1
+int           __accept4:socketcall:18(int, struct sockaddr*, socklen_t*, int)  -1,1,-1
 
 # scheduler & real-time
 int sched_setscheduler(pid_t pid, int policy, const struct sched_param *param)  1

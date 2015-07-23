@@ -281,6 +281,7 @@ __socketcall int accept(int, struct sockaddr *, socklen_t *);
 __socketcall int getsockname(int, struct sockaddr *, socklen_t *);
 __socketcall int getpeername(int, struct sockaddr *, socklen_t *);
 __socketcall int socketpair(int, int, int, int *);
+__socketcall int accept4(int, struct sockaddr*, socklen_t*, int);
 __socketcall int shutdown(int, int);
 __socketcall int setsockopt(int, int, int, const void *, socklen_t);
 __socketcall int getsockopt(int, int, int, void *, socklen_t *);
